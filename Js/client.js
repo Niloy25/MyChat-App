@@ -5,6 +5,9 @@ const messageInput = document.getElementById('messageInp');
 const messageContainer = document.querySelector('.container');
 var audio = new Audio('chatSound.mp3');
 
+const userName = prompt("Enter your name to Join:");
+socket.emit('new-user-joined', userName);
+
 function append(message, position, time) {
     const messageBox = document.createElement('div');
     messageBox.className = 'messageBox ' + position;
